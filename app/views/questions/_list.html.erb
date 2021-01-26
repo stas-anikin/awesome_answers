@@ -1,0 +1,14 @@
+<% if @tag.present? %>
+<h2>Showing Questions tagged by: </h2>
+<%= @tag.name %>
+<% end %>
+<% @questions.each do |question| %>
+<div>
+<h2><%= link_to(question.title, question_path(question.id)) %></h2>
+<p> <%= question.body %></p>
+<% if question.answers_count %>
+<small> Answers Count: <%= question.answers_count %></small>
+<% end %>  
+<hr>
+</div>
+<% end %>

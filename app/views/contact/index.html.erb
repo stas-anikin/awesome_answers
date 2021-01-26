@@ -1,0 +1,11 @@
+<h1>Contact us</h1>
+<%= form_tag contact_submit_path %>
+<div>
+    <%= label_tag :full_name%>
+    <%= text_field_tag :full_name %> 
+</div>
+<div>
+    <%=label_tag :email  %> 
+    <%=email_field_tag :email %>
+</div>
+<%= submit_tag "Contact us" %>
