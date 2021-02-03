@@ -15,6 +15,10 @@ class QuestionsController < ApplicationController
       # @questions=Question.all.order(created_at: :desc)
       @questions = Question.all.all_with_answer_counts.order(updated_at: :desc)
     end
+    respond_to do |format|
+      format.html { render }
+      format.json { render json: @questions }
+    end
   end
 
   def liked
